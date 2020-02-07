@@ -1,39 +1,20 @@
-/**
- * App.js
- *
- * Root component of the app, 
- * responsible for setting up routes.
- *
-*/
+import React, {useState} from 'react';
+import HomeStack from './navigation/HomeStack';
+import { StyleSheet } from 'react-native';
 
-// Libs
-import React from 'react';
-import { View, Text, Button } from 'react-native';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
 
-// Components
-import Home from './screens/Home';
-import Profile from './screens/Profile';
 
-/**
- * createStackNavigator
- *
- * Creates a stack of our routes.
- *
-*/
-const Navigator = createStackNavigator({
-    Home: { screen: Home },
-    Profile: { screen: Profile },
+export default function App() {
+  return (
+      <HomeStack />
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+   backgroundColor: '#fff',
+   flex: 1,
+   alignItems: 'center',
+   justifyContent: 'center'
+  },
 });
-
-/**
- * createAppContainer
- *
- * Responsible for managing app state and linking
- * the top-level navigator to the app environment.
- *
-*/
-const App = createAppContainer(Navigator);
-
-export default App;
