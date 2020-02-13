@@ -8,7 +8,12 @@ import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 
 const Navigator = createStackNavigator({
-    Home: { screen: Home },
+    Home: {
+         screen: Home,
+         navigationOptions: {
+            headerShown: false,
+          } 
+    },
     Profile: { screen: Profile },
 });
 
